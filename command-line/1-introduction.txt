@@ -1,1 +1,19 @@
-
+(venv) root@deepnote:~/work # pwd
+/root/work
+(venv) root@deepnote:~/work # ls
+scientific_programming_nolanbahr
+(venv) root@deepnote:~/work # cd scientific_programming_nolanbahr/
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # pwd
+/root/work/scientific_programming_nolanbahr
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # cd ~
+(venv) root@deepnote:~ # pwd
+/root
+(venv) root@deepnote:~ # cd work
+(venv) root@deepnote:~/work # cd scientific_programming_nolanbahr/
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ls
+command-line  python  README.md
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # cd ~
+(venv) root@deepnote:~ # pwd
+/root
+(venv) root@deepnote:~ # ^C
+(venv) root@deepnote:~ # 
