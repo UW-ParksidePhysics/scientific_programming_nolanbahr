@@ -2,11 +2,11 @@ Partner:
 
 What Went Well
 ---
-
+Once we got the hang of it, it was a lot easier to describe what to do rather than to look.
 
 What Would Make Next Time 1% Better
 ---
-* Focus:
+* Focus: Have partner with fewer other commitments
 
 * Communication:
 
@@ -14,4 +14,4 @@ What Would Make Next Time 1% Better
 
 * Division of responsibility
 
-* Code quality:
+* Code quality: Responsive terminal and more even hands in typing
