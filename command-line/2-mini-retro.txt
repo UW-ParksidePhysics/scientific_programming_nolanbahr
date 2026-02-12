@@ -1,4 +1,4 @@
-Partner:
+Partner: You.
 
 What Went Well
 ---
@@ -8,10 +8,10 @@ What Would Make Next Time 1% Better
 ---
 * Focus: Have partner with fewer other commitments
 
-* Communication:
+* Communication: Was good
 
-* Pacing:
+* Pacing: I thought we went throughout the exercies at a good speed.
 
-* Division of responsibility
+* Division of responsibility: I of course required more help than you did, as I am a student and you are not.
 
 * Code quality: Responsive terminal and more even hands in typing
