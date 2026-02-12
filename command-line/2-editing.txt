@@ -1,1 +1,12 @@
-
+(venv) root@deepnote:~/work # cd scientific_programming_williamdparker/
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # touch notes.txt
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # vi
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # cat notes.ttx
+cat: notes.ttx: No such file or directory
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # cat notes.txt
+This is my first file created in the terminal.
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # touch shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # vi shopping_list.txt 
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # cat shopping_list.txt 
+apples, bread, milk, coffee
+(venv) root@deepnote:~/work/scientific_programming_williamdparker # 
