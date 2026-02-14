@@ -1,6 +1,10 @@
-x_initial = 2
-x_final = 11
+initial_velocity = 3
+time = 1
+acceleration = 2
 
-displacement = x_final - x_initial
+displacement = initial_velocity*time + 0.5*acceleration*time**2
 
-print("Displacement:", displacement, "m")
+print("initial_velocity:", initial_velocity)
+print("time:", time)
+print("acceleration:", acceleration)
+print("displacement:", displacement)

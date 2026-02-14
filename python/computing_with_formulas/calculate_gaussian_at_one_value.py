@@ -1,6 +1,12 @@
 import math
-x = 1.0
-mu = 0.0
-sigma = 1.0
-gaussian = (1 / (sigma* math.sqrt(2 * math.pi))) * math.exp(-((x -mu)**2) / (2 * sigma**2))
-print("Gaussian value:", gaussian)
+
+mean = 0
+standard_deviation = 2
+input_value = 1
+
+gaussian_value = (1 / (math.sqrt(2*math.pi) * standard_deviation)) * math.exp(-0.5 * ((input_value - mean) / standard_deviation)**2)
+
+print("mean:", mean)
+print("standard_deviation:", standard_deviation)
+print("input_value:", input_value)
+print("gaussian_value:", gaussian_value)
