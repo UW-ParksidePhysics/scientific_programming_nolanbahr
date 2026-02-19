@@ -1,1 +1,37 @@
-
+(venv) root@deepnote:~/work # cp scientific_programming_nolanbahr/command-line/
+cp: missing destination file operand after 'scientific_programming_nolanbahr/command-line/'
+Try 'cp --help' for more information.
+(venv) root@deepnote:~/work # cp scientific_programming_nolanbahr/
+cp: missing destination file operand after 'scientific_programming_nolanbahr/'
+Try 'cp --help' for more information.
+(venv) root@deepnote:~/work # cd scientific_programming_nolanbahr/
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # cd command-line/
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # cp 3-files.txt backup_files.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # mv backup_files.txt renamed_files.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # rm renamed_files.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # mkdir practice_directory
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # ls
+10-CONCEPTS.md      3-CONCEPTS.md      5-permissions.txt  8-mini-retro.txt
+10-mini-retro.txt   3-files.txt        6-CONCEPTS.md      8-redirection.txt
+1-CONCEPTS.md       3-mini-retro.txt   6-mini-retro.txt   9-CONCEPTS.md
+1-introduction.txt  4-CONCEPTS.md      6-searching.txt    9-mini-retro.txt
+1-mini-retro.txt    4-directories.txt  7-CONCEPTS.md      9-vi.txt
+2-CONCEPTS.md       4-mini-retro.txt   7-mini-retro.txt   practice_directory
+2-editing.txt       5-CONCEPTS.md      7-processes.txt
+2-mini-retro.txt    5-mini-retro.txt   8-CONCEPTS.md
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # touch shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # mv shopping_list.txt practice_directory
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # ls -R practice_directory/
+practice_directory/:
+shopping_list.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # rm -r practice_directory
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # ls
+10-CONCEPTS.md      3-CONCEPTS.md      5-permissions.txt  8-mini-retro.txt
+10-mini-retro.txt   3-files.txt        6-CONCEPTS.md      8-redirection.txt
+1-CONCEPTS.md       3-mini-retro.txt   6-mini-retro.txt   9-CONCEPTS.md
+1-introduction.txt  4-CONCEPTS.md      6-searching.txt    9-mini-retro.txt
+1-mini-retro.txt    4-directories.txt  7-CONCEPTS.md      9-vi.txt
+2-CONCEPTS.md       4-mini-retro.txt   7-mini-retro.txt
+2-editing.txt       5-CONCEPTS.md      7-processes.txt
+2-mini-retro.txt    5-mini-retro.txt   8-CONCEPTS.md
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/command-line # 
