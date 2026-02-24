@@ -3,8 +3,8 @@ v0 = 10.0
 n = 8
 
 # gravity values
-g1 = 14.12
-g2 = 12.94
+g1 = 9.8
+g2 = 8.8
 
 # max times
 t_max1 = 2 * v0 / g1
