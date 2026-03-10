@@ -1,1 +1,36 @@
+(venv) root@deepnote:~/work # cd scientific_programming_nolanbahr/
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # touch notes.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ls -l notes.txt
+-rw-r--r--. 1 root users 0 Mar 10 17:54 notes.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # chmod u+x notes.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # chmod o-r notes.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ls -l
+total 9
+drwxr-xr-x. 1 root users 4096 Feb  3 15:04 command-line
+-rwxr-----. 1 root users    0 Mar 10 17:54 notes.txt
+drwxr-xr-x. 1 root users 4096 Feb  3 15:04 python
+-rw-r--r--. 1 root users  119 Feb  3 15:04 README.md
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # rm notes.txt
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # echo '#!/bin/sh\necho "Hello, world!"' > script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ./script.sh
+bash: ./script.sh: /bin/sh\necho: bad interpreter: Permission denied
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # chmod 755 script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ls -l script.sh
+-rwxr-xr-x. 1 root users 32 Mar 10 17:55 script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ./script.sh
+bash: ./script.sh: cannot execute: required file not found
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # rm script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # echo -e "#!/bin/sh\necho Hello, World!" > script.sh
+bash: !/bin/sh\necho: event not found
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # 
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # echo '#!/bin/sh\necho "Hello, world!"' > script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # chmod 755 script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ./script.sh
+bash: ./script.sh: cannot execute: required file not found
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # echo -e '#!/bin/sh\necho "Hello, world!"' > script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # chmod 755 script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # ./script.sh
+Hello, world!
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # rm script.sh
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # 
 
