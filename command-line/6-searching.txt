@@ -1,1 +1,38 @@
+(venv) root@deepnote:~/work # cd scientific_programming_nolanbahr/
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # touch ball.py
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # find . -name "ball.py" 
+./ball.py
+./python/3d_visualization/ball.py
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr # cd python/3d_visualization/
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/python/3d_visualization # ls
+ball.py  birthday_station.py  birthday_vector.py  CONCEPTS.md  projectile_motion_comparison.py  two_balls_bounce.py  two_balls_cross.py
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/python/3d_visualization # grep "vpython" ball.py
+(venv) root@deepnote:~/work/scientific_programming_nolanbahr/python/3d_visualization # cd /work/scientific_programming_nolanbahr/
+(venv) root@deepnote:/work/scientific_programming_nolanbahr # find . -mtime -3
+./ball.py
+(venv) root@deepnote:/work/scientific_programming_nolanbahr # cd python
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # touch test1.py
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # touch test2.py
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # echo "import numpy as np" > test1.py^C
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # echo "import numpy as np" > test1.py 
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # echo "import numpy as np" > test2.py
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # grep "import numpy" *.py
+test1.py:import numpy as np
+test2.py:import numpy as np
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # find . -name "*.py" | xargas grep "import numpy"
+bash: xargas: command not found
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # find . -name "*.py" | xargs grep "import numpy"
+./3d_visualization/ball.py:import numpy as np
+./3d_visualization/birthday_station.py:import numpy as np
+./3d_visualization/birthday_vector.py:import numpy as np
+./3d_visualization/two_balls_bounce.py:import numpy as np
+rm ./3d_visualization/two_balls_cross.py:import numpy as np
+./dictionaries_and_strings/make_hertzsprung_russell_diagram.py:import numpy as np
+./project/project.py:#   import numpy as np
+./test1.py:import numpy as np
+./test2.py:import numpy as np
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # rm test1.py
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # rm test2.py
+(venv) root@deepnote:/work/scientific_programming_nolanbahr/python # 
+
 
