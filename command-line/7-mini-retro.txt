@@ -1,17 +1,17 @@
-Partner:
+Partner: Me
 
 What Went Well
----
+The first part went well
 
 
 What Would Make Next Time 1% Better
----
-* Focus:
+I had trouble with the challange because deepnote couldn't open google.com
+* Focus: Good
 
-* Communication:
+* Communication: Good
 
-* Pacing:
+* Pacing: Good
 
-* Division of responsibility
+* Division of responsibility Good
 
-* Code quality:
+* Code quality: Decent

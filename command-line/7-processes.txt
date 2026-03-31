@@ -1,1 +1,26 @@
+(venv) root@deepnote:~/work # vi sample.txt &
+[1] 111
+(venv) root@deepnote:~/work # ps
+    PID TTY          TIME CMD
+    102 pts/0    00:00:00 bash
+    111 pts/0    00:00:00 vi
+    113 pts/0    00:00:00 ps
+(venv) root@deepnote:~/work # kill 111
+
+[1]+  Stopped                 vi sample.txt
+(venv) root@deepnote:~/work # sleep 100 &
+[2] 121
+(venv) root@deepnote:~/work # jobs
+[1]+  Stopped                 vi sample.txt
+[2]-  Running                 sleep 100 &
+(venv) root@deepnote:~/work # ping google.com &
+[1] 177
+(venv) root@deepnote:~/work # bash: ping: command not found
+ps
+    PID TTY          TIME CMD
+    171 pts/3    00:00:00 bash
+    194 pts/3    00:00:00 ps
+[1]+  Exit 127                ping google.com
+(venv) root@deepnote:~/work # kill 127
+bash: kill: (127) - No such process
 
