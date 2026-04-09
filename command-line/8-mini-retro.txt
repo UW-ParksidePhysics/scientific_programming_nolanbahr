@@ -1,1 +1,20 @@
+Partner: Me
+
+What Went Well
+---
+Went smoothly
+
+What Would Make Next Time 1% Better
+---
+If i went a litte faster
+
+* Focus: Good
+
+* Communication: Good
+
+* Pacing: Good
+
+* Division of responsibility Good
+
+* Code quality: Decent
 
