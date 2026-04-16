@@ -1,1 +1,22 @@
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+(venv) root@deepnote:~/work # vi test.py
+(venv) root@deepnote:~/work # cat test.py
+def show_info():
+    name = "Nolan"
+    value 5
+    total = value + 10
+    print("Hello from vi")
+    print("Total =", total)
 
+if __name__ == "__main__":
+    show_info()
+(venv) root@deepnote:~/work # python test.py
+  File "/datasets/_deepnote_work/test.py", line 3
+    value 5
+          ^
+SyntaxError: invalid syntax
+(venv) root@deepnote:~/work # vi test.py
+(venv) root@deepnote:~/work # python test.py
+Hello from vi
+Total = 15
+(venv) root@deepnote:~/work # 
