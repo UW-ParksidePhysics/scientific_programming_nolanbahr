@@ -19,8 +19,8 @@ planet_names = list(planets.keys())
 gravities = list(planets.values())
 
 start_height = 100
-time_step = 0.05
-total_time = 5
+time_step = 0.07
+total_time = 12
 
 times = np.arange(0, total_time, time_step)
 
