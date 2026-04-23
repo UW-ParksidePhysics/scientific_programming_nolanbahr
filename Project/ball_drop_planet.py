@@ -37,24 +37,41 @@ x_positions = np.arange(len(planet_names))
 ax.set_xlim(-0.5, len(planet_names) - 0.5)
 ax.set_ylim(0, start_height + 10)
 ax.set_xticks(x_positions)
-ax.set_xticklabels(planet_names, rotation=45)
-ax.set_ylabel("Height (meters)")
-ax.set_title("Balls Falling on Different Planets")
+ax.set_xticklabels(planet_names, rotation=45, fontsize=11)
+ax.set_ylabel("Height (meters)", fontsize=12)
+ax.set_title("Balls Falling on Different Planets", fontsize=14)
 
-balls, = ax.plot([], [], 'o', markersize=10)
+planet_colors = [
+    "gray", "goldenrod", "blue", "lightgray",
+    "red", "orange", "khaki", "lightblue", "darkblue"
+]
+
+planet_sizes = [80, 140, 150, 60, 100, 300, 260, 220, 210]
+
+# start them at the initial height instead of empty arrays
+balls = ax.scatter(
+    x_positions,
+    [start_height] * len(planet_names),
+    s=planet_sizes,
+    c=planet_colors
+)
 
 planet_labels = []
 for i in range(len(planet_names)):
-    label = ax.text(x_positions[i], start_height + 2, planet_names[i], ha="center", fontsize=9)
+    label = ax.text(
+        x_positions[i], start_height + 2, planet_names[i],
+        ha="center", fontsize=11, fontweight="bold"
+    )
     planet_labels.append(label)
 
 height_labels = []
 for i in range(len(planet_names)):
-    label = ax.text(x_positions[i], start_height + 7, "", ha="center", fontsize=8)
+    label = ax.text(x_positions[i], start_height + 7, "", ha="center", fontsize=9)
     height_labels.append(label)
 
 def init():
-    balls.set_data([], [])
+    offsets = np.column_stack((x_positions, [start_height] * len(planet_names)))
+    balls.set_offsets(offsets)
     for i in range(len(planet_names)):
         planet_labels[i].set_position((x_positions[i], start_height + 2))
         height_labels[i].set_text("")
@@ -67,7 +84,8 @@ def update(frame):
     for i in range(len(planet_names)):
         current_y.append(positions[i][frame])
 
-    balls.set_data(x_positions, current_y)
+    offsets = np.column_stack((x_positions, current_y))
+    balls.set_offsets(offsets)
 
     for i in range(len(planet_names)):
         planet_labels[i].set_position((x_positions[i], current_y[i] + 2))
@@ -84,6 +102,8 @@ anim = FuncAnimation(
     interval=50,
     blit=True
 )
+
+anim.save("planet_gravity.gif", writer="pillow", fps=20)
 
 plt.close()
 HTML(anim.to_jshtml())
