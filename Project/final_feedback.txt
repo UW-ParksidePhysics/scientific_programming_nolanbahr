@@ -1,0 +1,3 @@
+- How did you choose the colors of each planet circle?
+- Where does the information of gravity on each planet come from?
+- How hard would it be to add an image to each circle?
