@@ -39,7 +39,17 @@ ax.set_ylim(0, start_height + 10)
 ax.set_xticks(x_positions)
 ax.set_xticklabels(planet_names, rotation=45, fontsize=11)
 ax.set_ylabel("Height (meters)", fontsize=12)
-ax.set_title("Balls Falling on Different Planets", fontsize=14)
+ax.set_title("Balls Falling Under Different Planet Gravities", fontsize=14)
+
+ax.text(
+    0.5,
+    0.97,
+    "Gravity source: NASA planetary fact sheets",
+    transform=ax.transAxes,
+    fontsize=9,
+    ha="center",
+    va="top"
+)
 
 planet_colors = [
     "gray", "goldenrod", "blue", "lightgray",
@@ -48,7 +58,6 @@ planet_colors = [
 
 planet_sizes = [80, 140, 150, 60, 100, 300, 260, 220, 210]
 
-# start them at the initial height instead of empty arrays
 balls = ax.scatter(
     x_positions,
     [start_height] * len(planet_names),
@@ -59,24 +68,38 @@ balls = ax.scatter(
 planet_labels = []
 for i in range(len(planet_names)):
     label = ax.text(
-        x_positions[i], start_height + 2, planet_names[i],
-        ha="center", fontsize=11, fontweight="bold"
+        x_positions[i],
+        start_height + 2,
+        planet_names[i],
+        ha="center",
+        fontsize=11,
+        fontweight="bold"
     )
     planet_labels.append(label)
 
 height_labels = []
 for i in range(len(planet_names)):
-    label = ax.text(x_positions[i], start_height + 7, "", ha="center", fontsize=9)
+    label = ax.text(
+        x_positions[i],
+        start_height + 7,
+        "",
+        ha="center",
+        fontsize=9
+    )
     height_labels.append(label)
+
 
 def init():
     offsets = np.column_stack((x_positions, [start_height] * len(planet_names)))
     balls.set_offsets(offsets)
+
     for i in range(len(planet_names)):
         planet_labels[i].set_position((x_positions[i], start_height + 2))
         height_labels[i].set_text("")
         height_labels[i].set_position((x_positions[i], start_height + 7))
+
     return [balls] + planet_labels + height_labels
+
 
 def update(frame):
     current_y = []
@@ -93,6 +116,7 @@ def update(frame):
         height_labels[i].set_text(str(round(current_y[i], 1)) + " m")
 
     return [balls] + planet_labels + height_labels
+
 
 anim = FuncAnimation(
     fig,
