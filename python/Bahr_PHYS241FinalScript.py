@@ -1,3 +1,4 @@
+import warnings
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import constants
@@ -7,13 +8,17 @@ from equations_of_state import fit_eos
 from generate_matrix import generate_matrix
 
 
+warnings.filterwarnings("ignore")
+
 display_graph = True
 
 data_file_name = "Sn.Fd-3m.GGA-PBE.volumes_energies.dat"
 
-fit_function_name = "BirchMurnaghan"
+fit_function_name = "Birch-Murnaghan"
 
 potential_name = "Harmonic"
+
+potential_parameter = 1
 
 Ndim = 200
 
@@ -52,7 +57,9 @@ def calculate_bivariate_statistics(data):
 def calculate_quadratic_fit(data):
     x = data[:, 0]
     y = data[:, 1]
+
     coefficients = np.polyfit(x, y, 2)
+
     return coefficients
 
 
@@ -107,10 +114,6 @@ def annotate_plot(text, x, y, fontsize=10, ha="left"):
     )
 
 
-def quadratic_function(x, a, b, c):
-    return a * x**2 + b * x + c
-
-
 def make_equation_of_state_plot():
     chemical_symbol, crystal_symbol, approximation = parse_file_name(
         data_file_name
@@ -125,27 +128,24 @@ def make_equation_of_state_plot():
 
     quadratic_coefficients = calculate_quadratic_fit(data)
 
-    eos_fit = fit_eos(
-        data[:, 0],
-        data[:, 1],
-        quadratic_coefficients
-    )
-
-    equilibrium_volume = eos_fit[0]
-    bulk_modulus = eos_fit[1]
-
     volume_fit = np.linspace(
         stats["min_x"],
         stats["max_x"],
         400
     )
 
-    energy_fit = quadratic_function(
-        volume_fit,
-        quadratic_coefficients[0],
-        quadratic_coefficients[1],
-        quadratic_coefficients[2]
+    energy_fit, eos_parameters = fit_eos(
+        data[:, 0],
+        data[:, 1],
+        quadratic_coefficients,
+        equation_of_state="birch-murnaghan",
+        number_of_points=400
     )
+
+    equilibrium_energy = eos_parameters[0]
+    bulk_modulus = eos_parameters[1]
+    bulk_modulus_derivative = eos_parameters[2]
+    equilibrium_volume = eos_parameters[3]
 
     volume_data_converted = convert_units(
         data[:, 0],
@@ -188,6 +188,7 @@ def make_equation_of_state_plot():
 
     x_min = np.min(volume_data_converted) - 0.10 * x_range
     x_max = np.max(volume_data_converted) + 0.10 * x_range
+
     y_min = np.min(energy_data_converted) - 0.10 * y_range
     y_max = np.max(energy_data_converted) + 0.10 * y_range
 
@@ -272,7 +273,7 @@ def make_equation_of_state_plot():
         f"{chemical_symbol}."
         f"{crystal_symbol}."
         f"{approximation}."
-        f"{fit_function_name}"
+        f"{fit_function_name.replace('-', '')}"
         f"EquationOfState.png"
     )
 
@@ -285,7 +286,13 @@ def make_equation_of_state_plot():
 
 
 def make_eigenvector_plot():
-    matrix = generate_matrix()
+    matrix = generate_matrix(
+        -10,
+        10,
+        Ndim,
+        potential_name,
+        potential_parameter
+    )
 
     eigenvalues, eigenvectors = calculate_lowest_eigenvectors(
         matrix,
